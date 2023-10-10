@@ -68,7 +68,7 @@ def logar(request):
         if user:
             login(request, user)
 						# Acontecerá um erro ao redirecionar por enquanto, resolveremos nos próximos passos
-            return redirect('/')
+            return redirect('/exames/solicitar_exames')
         else:
             messages.add_message(request, constants.ERROR, 'Usuario ou senha inválidos')
             return redirect('/usuarios/login')
