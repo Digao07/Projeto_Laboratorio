@@ -21,13 +21,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Projeto de um Laboratorio, com as seguintes funcionalidades:
 
--Cadastro de Cliente
--Login
--Solicitação de exames
--Gerenciar solicitação de Exames
--Acesso medico
--Gerenciar Cliente
--Alterar dados dos exames
+- Cadastro de Cliente
+- Login
+- Solicitação de exames
+- Gerenciar solicitação de Exames
+- Acesso medico
+- Gerenciar Cliente
+- Alterar dados dos exames
 
 ## 🔖 Layout
 
