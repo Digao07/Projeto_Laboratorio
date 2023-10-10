@@ -14,6 +14,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Python
 - Django
 - Bootstrap
+- Javascript
 - HTML e CSS
 
 ## 💻 Projeto  
