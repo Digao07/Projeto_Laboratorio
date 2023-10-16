@@ -75,15 +75,16 @@ def gerenciar_exames(request):
 @login_required
 def permitir_abrir_exame(request, exame_id):
     exame = SolicitacaoExame.objects.get(id=exame_id)
-		#TODO: validar se o exame é do usuário
+    #TODO: validar se o exame é do usuário
     if not exame.requer_senha:
-         if not exame.resultado:
-            messages.add_message(request, constants.ERROR, 'Ainda não foi cadastrado o seu resultado, entre em contato com o laboratório.')
-            return(redirect('/exames/solicitar_exames'))
-
-    else: 
-        return redirect(f'/exames/solicitar_senha_exame/{exame.id}')
+        if exame.resultado:        
+            return redirect(exame.resultado.url)
+        else:
+            messages.add_message(request, constants.ERROR, 'Não existe um PDF neste exame, contate a central para mais informações')
+            return redirect(f'/exames/gerenciar_exames/')
     
+    else:
+        return redirect(f'/exames/solicitar_senha_exame/{exame.id}')
 @login_required
 def solicitar_senha_exame(request, exame_id):
     exame = SolicitacaoExame.objects.get(id=exame_id)
